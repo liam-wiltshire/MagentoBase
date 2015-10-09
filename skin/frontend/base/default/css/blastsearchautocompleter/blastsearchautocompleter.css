@@ -1,0 +1,14 @@
+#search_autocomplete{ background-color: #FFFFFF; border: 2px solid #C4C6C8; margin: 0; padding: 5px; width: 310px; }
+#search_autocomplete ul{ margin-bottom: 5px; border: 1px solid #C4C6C8; }
+#search_autocomplete li{ padding: 0; border: 0 none; }
+#search_autocomplete li :hover, .search_autocomplete_li_hover{ padding: 0; background-color: #D5E4EB !important; }
+#search_autocomplete ol{ border-top: 1px solid #F4EEE7; height: 100%; }
+#search_autocomplete img{ float: left; border: 0 none; vertical-align: top; height: 95px; width: 95px; margin: 5px; }
+#heading_text_autocomplete, #heading_category_autocomplete, #heading_product_autocomplete{ text-align: left; padding: 0 4px; margin-bottom: 4px; }
+#heading_text_autocomplete{ font-style: italic; border-bottom: 1px dashed #999999; }
+#categories_results_autocomplete{ height: 100px; overflow: auto; }
+#categories_results_autocomplete li{ height: 20px; }
+#products_results_autocomplete{ max-height: 535px; overflow: auto; }
+#products_results_autocomplete li{ height: 107px; overflow: hidden; }
+#products_results_autocomplete p{ margin: 0 0 5px; }
+.hidden_url{ display: none; }

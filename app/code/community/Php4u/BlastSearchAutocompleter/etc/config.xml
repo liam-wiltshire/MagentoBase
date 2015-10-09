@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+* @category   Php4u
+* @package    Php4u_BlastSearchAutocompleter
+* @author     Marcin Szterling <marcin@php4u.co.uk>
+* @copyright  Php4u Marcin Szterling (c) 2014
+* @license http://php4u.co.uk/licence/
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+* AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+* LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+* OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+* THE SOFTWARE.
+* Any form of distribution, sell, transfer forbidden see licence above
+*/
+-->
+<config>
+    <modules>
+        <Php4u_BlastSearchAutocompleter>
+            <version>1.0.10</version>
+        </Php4u_BlastSearchAutocompleter>
+    </modules>
+    <global>
+        <models>
+            <php4u_blastsearchautocompleter>
+                <class>Php4u_BlastSearchAutocompleter_Model</class>
+            </php4u_blastsearchautocompleter>
+        </models>
+        <blocks>
+            <php4u_blastsearchautocompleter>
+                <class>Php4u_BlastSearchAutocompleter_Block</class>
+            </php4u_blastsearchautocompleter>
+        </blocks>
+        <helpers>
+            <php4u_blastsearchautocompleter>
+                <class>Php4u_BlastSearchAutocompleter_Helper</class>
+            </php4u_blastsearchautocompleter>
+        </helpers>
+        <events>
+            <admin_system_config_changed_section_blastsearchauto>
+                <observers>
+                    <php4u_blastsearchautocompleter>
+                        <type>singleton</type>
+                        <class>php4u_blastsearchautocompleter/observer</class>
+                        <method>onConfigChange</method>
+                    </php4u_blastsearchautocompleter>
+                </observers>
+            </admin_system_config_changed_section_blastsearchauto>
+        </events>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <php4u_autocomplete module="Php4u_BlastSearchAutocompleter">
+                    <file>blastsearchautocompleter.xml</file>
+                </php4u_autocomplete>
+            </updates>
+        </layout>
+        <routers>
+            <blastsearchautocompleter>
+                <use>standard</use>
+                <args>
+                    <module>Php4u_BlastSearchAutocompleter</module>
+                    <frontName>autocompleter</frontName>
+                </args>
+            </blastsearchautocompleter>
+        </routers>
+        <translate>
+            <modules>
+                <Php4u_BlastSearchAutocompleter>
+                    <files>
+                        <default>Php4u_BlastSearchAutocompleter.csv</default>
+                    </files>
+                </Php4u_BlastSearchAutocompleter>
+            </modules>
+        </translate>
+    </frontend>
+    <default>
+        <blastsearchauto>
+            <general>
+                <enabled>1</enabled>
+                <cache>1</cache>
+                <show_categories>1</show_categories>
+                <attributes>price,short_description</attributes>
+                <limiter>5</limiter>
+            </general>
+        </blastsearchauto>
+    </default>
+</config>

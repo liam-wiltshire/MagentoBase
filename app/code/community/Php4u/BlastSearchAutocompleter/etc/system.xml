@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * @category   Php4u
+ * @package    Php4u_BlastSearchAutocompleter
+ * @author     Marcin Szterling <marcin@php4u.co.uk>
+ * @copyright  Php4u Marcin Szterling (c) 2014
+ * @license http://php4u.co.uk/licence/
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ * Any form of distribution, sell, transfer forbidden see licence above
+ */
+ -->
+<config>
+    <tabs>
+        <php4u translate="label comment">
+            <label>Php4u Extensions</label>
+            <sort_order>100</sort_order>
+        </php4u>
+    </tabs>
+    <sections>
+        <blastsearchauto translate="label comment">
+            <label>Blast Search Autocompleter Options</label>
+            <tab>php4u</tab>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label comment">
+                    <label>Extension General Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>200</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+				          <![CDATA[
+							<div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;">
+							<img src="http://php4u.co.uk/blastlucenesearch/index.php?resize=yes" width="32" height="28" alt="Php4u" /><br/>
+							This module was developed by <a href="http://php4u.co.uk" target="_blank">php4u.co.uk</a><br/>
+							<br/>Support - click <a href="http://php4u.zendesk.com/" target="_blank">here</a>
+							<br/>Extension will work best With <a href="http://www.magentocommerce.com/magento-connect/blast-lucene-search-advanced-search-indexing.html" target="_blank">BlastSearchLucene</a>, but also works with magento default search engine
+							</div>
+						  ]]>
+					</comment>
+                    <fields>
+                        <enabled translate="label comment">
+                            <label>Autocomplete enabled?</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </enabled>
+                        <cache translate="label comment">
+                            <label>Cache autocomplete results?</label>
+                            <comment>If Yes selected then autocomplete results will be cached for 1 hour to improve performance. Saving this config will clear autocomplete cache</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </cache>
+                        <show_categories translate="label comment">
+                            <label>Show categories results?</label>
+                            <comment>If Yes selected then matching categories will be included in results</comment>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </show_categories>
+                        <attributes translate="label comment">
+                            <label>Attributes to display in results:</label>
+                            <comment>Product Image and Name are already displayed</comment>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>php4u_blastsearchautocompleter/attributes</source_model>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </attributes>
+                        <limiter translate="label comment">
+                            <label>Maximum number of results</label>
+                            <comment>If put too much it might not fit the page. 1-5 allowed.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>40</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-zero-or-greater</validate>
+                        </limiter>
+                    </fields>
+                </general>
+            </groups>
+        </blastsearchauto>
+    </sections>
+</config>
